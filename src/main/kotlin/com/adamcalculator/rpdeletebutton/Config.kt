@@ -71,6 +71,8 @@ class Config {
      */
     var isUseTrashFolder: Boolean = true
 
+    var trashPath = "%GAME_DIR%/resourcepacks/_deleted"
+
 
     /**
      * Save a config to file

@@ -18,7 +18,6 @@ import kotlin.io.path.*
 
 class DeleteButtonWidget : ResourcePackEntryWidget {
     companion object {
-        const val TRASH_DIR_NAME = "_deleted_resourcepacks"
         const val LOG = "RPDeleteButton"
 
         private val CONFIG = Config.getConfig()
@@ -90,7 +89,8 @@ class DeleteButtonWidget : ResourcePackEntryWidget {
         val mc = Minecraft.getInstance()
 
         if (CONFIG.isUseTrashFolder) {
-            val trash = mc.resourcePackDirectory.resolve(TRASH_DIR_NAME)
+            val trash = Path(CONFIG.trashPath.replace("%GAME_DIR%", mc.gameDirectory.absolutePath))
+
             if (!trash.exists()) {
                 trash.createDirectory()
             }

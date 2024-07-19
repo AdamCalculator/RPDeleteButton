@@ -1,0 +1,10 @@
+{
+  "rpdeletebutton.modname.full": "Resource Pack Delete Button",
+  "rpdeletebutton.config.always_show_button": "Показывать кнопку без Shift",
+  "rpdeletebutton.config.always_show_button.tooltip": "Если отключено, кнопка по умолчанию появляется только при нажатой клавише Shift",
+  "rpdeletebutton.config.use_trash_folder": "Использовать корзину",
+  "rpdeletebutton.config.use_trash_folder.tooltip.windows": "Перемещать в папку '%s'",
+  "rpdeletebutton.config.use_trash_folder.tooltip": "Перемещать в директорию '%s'",
+  "rpdeletebutton.config.delete_without_confirming": "Удалять без подтверждения",
+  "rpdeletebutton.config.delete_without_confirming.tooltip": "Экран подтверждения больше не будет появиться. ВНИМАНИЕ: файлы больше нельзя будет восстановить!"
+}

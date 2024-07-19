@@ -1,10 +1,10 @@
 {
   "rpdeletebutton.modname.full": "Resource Pack Delete Button",
   "rpdeletebutton.config.always_show_button": "Show button without Shift button",
-  "rpdeletebutton.config.always_show_button.tooltip": "If disabled button",
+  "rpdeletebutton.config.always_show_button.tooltip": "If disabled, the button by default appears only with the Shift key held down",
   "rpdeletebutton.config.use_trash_folder": "Move to Trash",
-  "rpdeletebutton.config.use_trash_folder.tooltip.windows": "Move to '_deleted_resourcepacks' folder instead of delete",
-  "rpdeletebutton.config.use_trash_folder.tooltip": "Move to '_deleted_resourcepacks' directory instead of delete",
+  "rpdeletebutton.config.use_trash_folder.tooltip.windows": "Move to '%s' folder",
+  "rpdeletebutton.config.use_trash_folder.tooltip": "Move to '%s' directory",
   "rpdeletebutton.config.delete_without_confirming": "Delete without confirmation",
   "rpdeletebutton.config.delete_without_confirming.tooltip": "The confirmation screen will no longer appear and the files will no longer be recoverable!"
 }

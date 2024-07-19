@@ -46,7 +46,7 @@ class ModMenuIntegration : ModMenuApi {
 
         general.addEntry(
             entryBuilder.startBooleanToggle(Component.translatable("rpdeletebutton.config.use_trash_folder"), config.isUseTrashFolder)
-                .setTooltip(Component.translatable(if (Util.getPlatform() == Util.OS.WINDOWS) "rpdeletebutton.config.use_trash_folder.tooltip.windows" else "rpdeletebutton.config.use_trash_folder.tooltip"))
+                .setTooltip(Component.translatable(if (Util.getPlatform() == Util.OS.WINDOWS) "rpdeletebutton.config.use_trash_folder.tooltip.windows" else "rpdeletebutton.config.use_trash_folder.tooltip", config.trashPath))
                 .setDefaultValue(defConfig.isUseTrashFolder)
                 .setSaveConsumer { newValue ->
                     config.isUseTrashFolder = newValue
