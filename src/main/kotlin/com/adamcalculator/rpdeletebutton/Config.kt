@@ -7,9 +7,15 @@ import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.exists
 
+/**
+ * Config of a RPDeleteButton
+ */
 class Config {
     companion object {
-        private var config: Config? = null;
+        private const val MOD_ID = "respackdeletebutton"
+
+        // instance of config (singleton)
+        private var config: Config? = null
 
         fun getConfig(): Config {
             if (config == null) {
@@ -39,20 +45,41 @@ class Config {
             return Gson().fromJson(fileContent, Config::class.java)
         }
 
+        /**
+         * Return a Path of config file
+         */
         private fun location(): Path {
-            return Minecraft.getInstance().gameDirectory.toPath().resolve("config").resolve("respackdeletebutton.json")
+            return Minecraft.getInstance().gameDirectory.toPath().resolve("config").resolve("$MOD_ID.json")
         }
     }
 
-    private fun save() {
+
+
+    // Properties
+    /**
+     * No snow confirmation screen before delete
+     */
+    var noConfirmationDelete: Boolean = false
+
+    /**
+     * Show button without need a Shift key hold
+     */
+    var alwaysShowButton = false
+
+    /**
+     * Move to mod trash folder instead of Files.delete()
+     */
+    var isUseTrashFolder: Boolean = true
+
+
+    /**
+     * Save a config to file
+     */
+    fun save() {
         val location = location()
 
         Files.deleteIfExists(location)
         val toWrite = GsonBuilder().setPrettyPrinting().create().toJson(this)
         Files.writeString(location, toWrite)
     }
-
-    var noConfirmationDelete: Boolean = false
-    var alwaysShowButton = false
-    var isUseTrashFolder: Boolean = true
 }

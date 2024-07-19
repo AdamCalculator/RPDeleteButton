@@ -11,7 +11,7 @@
   "contact": {
     "homepage": "https://github.com/AdamCalculator/RPDeleteButton",
     "sources": "https://github.com/AdamCalculator/RPDeleteButton",
-    "issues": "https://github.com/AdamCalculator/RPDeleteButton"
+    "issues": "https://github.com/AdamCalculator/RPDeleteButton/issues"
   },
 
   "license": "MIT",
@@ -25,9 +25,7 @@
 
   "depends": {
     "fabricloader": ">=${loader_version}",
-    "fabric-api": "*",
     "minecraft": "~${minecraft_version}",
-    "java": ">=21",
     "fabric-language-kotlin": ">=${fabric_kotlin_version}"
   },
   "recommends": {

@@ -1,7 +1,7 @@
 {
   "rpdeletebutton.modname.full": "Resource Pack Delete Button",
   "rpdeletebutton.config.always_show_button": "Show button without Shift button",
-  "rpdeletebutton.config.always_show_button.tooltip": "Show button without Shift button",
+  "rpdeletebutton.config.always_show_button.tooltip": "If disabled button",
   "rpdeletebutton.config.use_trash_folder": "Move to Trash",
   "rpdeletebutton.config.use_trash_folder.tooltip.windows": "Move to '_deleted_resourcepacks' folder instead of delete",
   "rpdeletebutton.config.use_trash_folder.tooltip": "Move to '_deleted_resourcepacks' directory instead of delete",

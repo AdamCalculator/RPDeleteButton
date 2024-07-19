@@ -17,7 +17,7 @@ class ModMenuIntegration : ModMenuApi {
             return@ConfigScreenFactory if (FabricLoader.getInstance().isModLoaded("cloth-config")) {
                 createClothConfigScreen(parent)
             } else {
-                println("cloth-config is missing :(")
+                println("[${DeleteButtonWidget.LOG}] cloth-config is missing :(")
                 null
             }
         }
