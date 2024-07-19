@@ -1,33 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "respackdeletebutton",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "ResPackDeleteButton",
+  "description": "Add delete button in resource packs (hold Shift to see)",
   "authors": [
-    "Me!"
+    "AdamCalculator"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/AdamCalculator/RPDeleteButton",
+    "sources": "https://github.com/AdamCalculator/RPDeleteButton",
+    "issues": "https://github.com/AdamCalculator/RPDeleteButton"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/respackdeletebutton/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      {
-        "adapter": "kotlin",
-        "value": "net.fabricmc.example.ExampleMod"
-      }
-    ]
+    "libjf:resource_pack_entry_widget": ["com.adamcalculator.rpdeletebutton.DeleteButtonWidget"],
+    "modmenu": ["com.adamcalculator.rpdeletebutton.ModMenuIntegration"]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": ">=${loader_version}",
@@ -36,7 +30,7 @@
     "java": ">=21",
     "fabric-language-kotlin": ">=${fabric_kotlin_version}"
   },
-  "suggests": {
-    "another-mod": "*"
+  "recommends": {
+    "cloth-config": "*"
   }
 }

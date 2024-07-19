@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     kotlin("jvm")
     id("fabric-loom")
@@ -14,11 +16,31 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
+
+    maven("https://maven.frohnmeyer-wds.de/artifacts") {
+        name = "Entry Widgets"
+        content {
+            includeGroup("io.gitlab.jfronny.libjf")
+        }
+    }
+
+    maven("https://maven.terraformersmc.com/releases/")
+    maven("https://maven.shedaniel.me/")
+}
+
+loom {
+    accessWidenerPath.set(file("src/main/resources/respackdeletebutton.accesswidener"))
 }
 
 dependencies {
+    include(modImplementation("io.gitlab.jfronny.libjf:libjf-resource-pack-entry-widgets-v0:3.17.0-SNAPSHOT")!!)
+    modImplementation("com.terraformersmc:modmenu:${property("modmenu_ver")}")
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${property("cloth_config")}") {
+        exclude("net.fabricmc.fabric-api")
+    }
+
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
-    mappings("net.fabricmc:yarn:${property("yarn_mappings")}:v2")
+    mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${property("loader_version")}")
 
     modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
@@ -59,7 +81,7 @@ tasks {
     }
 
     compileKotlin {
-        kotlinOptions.jvmTarget = "21"
+        compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
     }
 
 }
